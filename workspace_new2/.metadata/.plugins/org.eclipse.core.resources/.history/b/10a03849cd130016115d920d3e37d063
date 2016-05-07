@@ -1,0 +1,16 @@
+package csvparse;
+
+import java.awt.List;
+import java.util.LinkedList;
+
+public class csvread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		List<CSV> csvInput = new LinkedList<CSV>(); 
+		
+
+	}
+
+}

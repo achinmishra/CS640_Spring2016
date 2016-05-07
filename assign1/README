@@ -1,0 +1,9 @@
+Name: Pang, Xueqin; 	Email: xpang3@wisc.edu; 	CS username: xueqin
+Name: Mishra, Achin; 	Email:  mishra25@wisc.edu; 	CS username: achinmishra
+
+## How to compile the source code with an example:
+$> ./run.sh make
+$> java Iperfer -c -h 10.0.0.1 -p 1025 -t 20
+
+##How to clean the code:
+$> ./run.sh clean

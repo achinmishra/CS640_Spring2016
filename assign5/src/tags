@@ -1,0 +1,7 @@
+$(EXECUTABLE	Makefile	/^$(EXECUTABLE): edu\/wisc\/cs\/sdn\/simpledns\/SimpleDNS/
+.PHONY	Makefile	/^.PHONY: clean$/
+EXECUTABLE	Makefile	/^EXECUTABLE = edu.wisc.cs.sdn.simpledns.SimpleDNS.c/
+JCC	Makefile	/^JCC = javac$/
+JFLAGS	Makefile	/^JFLAGS = -g$/
+clean	Makefile	/^clean:$/
+default	Makefile	/^default: $(EXECUTABLE)$/

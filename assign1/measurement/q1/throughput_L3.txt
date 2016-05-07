@@ -1,0 +1,8 @@
+h3 s, h4 c
+server received = 78391 KB, rate = 28.452 Mbps
+client sent = 78391 KB, rate = 30.592 Mbps
+
+server received = 83448 KB, rate = 28.468 Mbps
+client sent = 83448 KB, rate = 31.585 Mbps
+
+

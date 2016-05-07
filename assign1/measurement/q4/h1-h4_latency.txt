@@ -1,0 +1,7 @@
+h1-h4
+ping -c 20 10.0.0.4
+rtt min/avg/max/mdev = 160.219/160.753/165.842/1.389 ms
+ping -c 20 10.0.0.4
+rtt min/avg/max/mdev = 160.194/160.338/160.945/0.469 ms
+
+

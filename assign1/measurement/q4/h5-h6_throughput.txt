@@ -1,0 +1,11 @@
+h5 s - h6 c;
+
+h5-h6 (start first)
+server received = 61436 KB, rate = 21.289 Mbps
+client sent = 61436 KB, rate = 23.833 Mbps
+
+t for 120 second
+h5-h6 (start first)
+server received = 320782 KB, rate = 20.787 Mbps
+client sent = 320782 KB, rate = 20.965 Mbps
+

@@ -1,0 +1,23 @@
+h7: (for three measurements)
+ping -c 20 10.0.0.4
+rtt min/avg/max/mdev = 160.252/160.729/165.134/1.258
+ping -c 20 10.0.0.4
+rtt min/avg/max/mdev = 160.203/160.355/160.981/0.379
+ping -c 20 10.0.0.9
+rtt min/avg/max/mdev = 160.193/160.750/165.137/1.278
+
+
+h1 (for 3 measurements)
+ping -c 20 10.0.0.9
+rtt min/avg/max/mdev = 160.183/160.755/165.753/1.284
+ping -c 20 10.0.0.9
+rtt min/avg/max/mdev = 160.247/160.374/161.125/0.508
+ping -c 20 10.0.0.4
+rtt min/avg/max/mdev = 160.237/160.750/166.022/1.418
+
+
+
+
+
+
+

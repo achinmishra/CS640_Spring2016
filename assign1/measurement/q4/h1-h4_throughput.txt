@@ -1,0 +1,13 @@
+h1 s -- h4 c;
+h1-h4 
+server received = 43033 KB, rate = 14.381 Mbps
+client sent = 43033 KB, rate = 16.710 Mbps
+
+
+t for 120 second 
+h1-h4 
+server received = 243798 KB, rate = 15.838 Mbps
+client sent = 243798 KB, rate = 16.002 Mbps
+
+
+

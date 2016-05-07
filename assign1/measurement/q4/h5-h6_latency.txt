@@ -1,0 +1,5 @@
+h5-h6
+ping -c 20 10.0.0.6
+rtt min/avg/max/mdev = 40.153/40.577/44.103/0.979 ms
+ping -c 20 10.0.0.6
+rtt min/avg/max/mdev = 40.168/40.262/40.547/0.242 ms

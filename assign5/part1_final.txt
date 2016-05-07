@@ -1,0 +1,52 @@
+1. DNS
+
+a. 12 DNS lookups, no redudent lookups
+51	https://www.google-a...ics.com/analytics.js	text/javascript	3.899 s	1272 ms	95 ms	79 ms	134 ms	343 ms	10.9 KB	200	216.58.218.238
+28	https://cdn.optimize....com/js/400912536.js	text/javascript	1.495 s	710 ms	63 ms	45 ms	63 ms	110 ms	73.3 KB	200	23.203.150.187
+56	https://js-agent.new...ic.com/nr-918.min.js	application/javascript	5.428 s	237 ms	37 ms	52 ms	51 ms	1 ms	9.0 KB	200	23.235.46.175
+40	https://www.fullstory.com/s/fs.js	application/javascript	3.102 s	222 ms	134 ms	177 ms	160 ms	175 ms	16.4 KB	200	72.14.248.62
+55	https://www.youtube....o?0.6434552498708486	image/x-icon	5.37 s	194 ms	31 ms	50 ms	53 ms	-	0.6 KB	200	172.217.1.206
+63	https://static.doubl...nstream/ad_status.js	text/javascript	7.308 s	140 ms	31 ms	49 ms	39 ms	-	0.3 KB	200	216.58.218.230
+65	https://fonts.gstati...bzo0kSThX0UTuA.woff2	font/woff2	7.56 s	84 ms	40 ms	86 ms	46 ms	26 ms	14.5 KB	200	74.125.22.94
+1	http://www.code.org/	-	0.11 s	76 ms	34 ms	-	41 ms	-	0.2 KB	301	50.17.209.250
+2	http://code.org/	text/html	0.267 s	76 ms	36 ms	-	44 ms	-	0.5 KB	301	54.230.53.206
+58	https://s.ytimg.com/...r-webp-vflCjs5Xt.css	text/css	5.749 s	58 ms	33 ms	51 ms	35 ms	72 ms	39.8 KB	200	216.58.218.238
+61	https://bam.nr-data....jsonp=NREUM.setToken	text/javascript	5.777 s	41 ms	49 ms	141 ms	134 ms	-	0.2 KB	200	50.31.164.166
+64	https://i.ytimg.com/...yen5nc/hqdefault.jpg	image/jpeg	7.458 s	33 ms	32 ms	49 ms	40 ms	45 ms	26.3 KB	200	172.217.1.206
+
+
+b. The first lookup was for www.code.org/
+Name Server Queried				Records Returned
+a.root-servers.net                              org.			172800	IN	NS	a0.org.afilias-nst.info.                        a0.org.afilias-nst.info. 172800	IN	A	199.19.56.1
+a0.org.afilias-nst.info.			code.org.		86400	IN	NS	ns-1497.awsdns-59.org				ns-1497.awsdns-59.org.	86400	IN	A	205.251.197.217
+ns-1497.awsdns-59.org				www.code.org.		60	IN	A	107.20.189.132
+
+c. the second look up was for code.org, the NS for code.org is already cached, so only need to lookup the type A record for cord.org, the connection was redirected to CDN server \
+a0.org.afilias-nst.info                         cord.org.		86400	IN	A	72.249.80.176
+ 
+
+2. Clouds and CDNs
+
+a.
+www.code.org  with IP 50.17.209.250  resolved into Amazon EC2 in "us-east-1" region. It matches with 50.16.0.0/15, "region": "us-east-1", "service": "AMAZON"/"EC2"
+
+
+b. https://cdn.optimizely.com  IP: 23.203.150.187 resolved to Akamai CDN. 
+
+c. 
+47 requests over 7 connections with (code.org : Amazon CloudFront)(43 objects were cached, 2 missing, 1 error, 1 X-Cache: Redirect from cloudfront)
+1 requests over 1 connection with  (cdn.optimizely.com : Akamai) (no X-Cache field in response)
+2 requests over 1 connection with (www.fullstory.com : Google) (no chache)
+3 requests over 1 connection with (www.google-analytics.com  : Google) (no X-Cache field)
+2 requests over 1 connection with (www.youtube.com : Google) (no X-Cache field)
+1 requests over 1 connection with (js-agent.newrelic.com : Fastly) (X-Cache hit, 1 object cached)
+3 requests over 1 connection with (s.ytimg.com : Google)(no X-Cache field)
+1 request over 1 connection with (www.google.com : Google)(no X-Cache field)
+1 request over 1 connection with (static.doubleclick.net, Google) (no X-Cache field)
+1 request over 1 connection with (i.ytimg.com, Google) (no X-Cache field)
+1 request over 1 connection wtih (fonts.gstatic.com, Google) (no X-Cache field)
+In total, 63 requests over 17 connections with CDN servers. 
+
+d. 44 objects were cached, 2 missing, 1 error, 1 X-Cache: Redirect from cloudfront, the other responses do not have X-Cache field
+
+

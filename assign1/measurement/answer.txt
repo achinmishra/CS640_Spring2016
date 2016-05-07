@@ -1,0 +1,147 @@
+Question 1:
+latency: (We tried multiple times with the output included in this folder, and we chose the one with least fluctuation as the final answer)
+L1  (80.3 ms): rtt min/avg/max/mdev = 80.097/80.288/82.967/0.678 ms
+L2 (20.3 ms): rtt min/avg/max/mdev = 20.077/20.343/22.773/0.676 ms
+L3 (60.3 ms): rtt min/avg/max/mdev = 60.104/60.330/63.070/0.671 ms
+L4 (10.3 ms): rtt min/avg/max/mdev = 10.109/10.325/13.257/0.680 ms
+L5 (10.2 ms): rtt min/avg/max/mdev = 10.069/10.241/12.494/0.537 ms
+
+throughput: (We did the measurement multiple times and the one with least rate difference between server and client is included here)
+S = server side; C = client side)
+L1  (18.5 Mbps (S)/20.0 Mpbs (C)):
+server received = 56358 KB, rate = 18.521 Mbps
+client sent = 56358 KB, rate = 20.063 Mbps
+
+L2 (37.5 Mbps (S)/ 39.3 Mpbs (C)):
+server received = 107973 KB, rate = 37.538 Mbps
+client sent = 107973 KB, rate = 39.283 Mbps
+
+L3 (28.5 Mpbs (S)/ Mpbs 30.6(C)):
+server received = 78391 KB, rate = 28.452 Mbps
+client sent = 78391 KB, rate = 30.592 Mbps
+
+L4 (23.9 Mpbs (S)/26.2 Mpbs(C)) :
+server received = 66081 KB, rate = 23.897 Mbps
+client sent = 66081 KB, rate = 26.185 Mbps
+
+L5 (23.9 Mpbs (S)/ 25.8 Mpbs (C)):
+server received = 66272 KB, rate = 23.901 Mbps
+client sent = 66272 KB, rate = 25.821 Mbps
+
+
+Question 2:
+The expected latency is the sum of latencies along the whole path, which is Latency_L1 + Latency_L2 + Latency_L3. This is because latency = propagation + transmit + queue. Propagation and transmit time accumulate when more links are involved, while the propagation and transmit time on each link remain the same as long as the package size remains the same. The queuing time is almost negligible in case of "ping" because the rate of the ping is very low than the bandwidth of the channel and the ping packet size is small. Hence, the queue is not accumulating any packets so queuing time wont be incurred in the overall latency.  
+The expected throughput when h1 wants to communicate with h4 is the smallest throughput among throughput_L1, throughput_L2 and throughput_L3, which is ~ 20 Mbps. This is because throughput is the total amount of data that can be transmitted along a path within certain time unit. And the narrowest link will be the one that is limiting the total tramsmition volume within certain time unit. 
+
+The measured results are:
+latency (160.6 ms): rtt min/avg/max/mdev = 160.167/160.636/165.071/1.250 ms
+throughput: 18.6 Mbps in the sever side, and 20.5 Mbps in the client side.
+
+These are close to our expectation. This is because, latency is the delay of sending message from point A to point B, and the total time is accumulative if more links are involved. Throughput (or bandwidth) is the data transmitted per time unit, it is obstructed/qualified by the narrowest bandwidth.
+
+Question 3:
+When hosts connected to s1 want to simultaneously talk to hosts connected to s4,
+the expected latency is the same as when there is no multiplexing (latency = propagation + transmit + queue; propagation and transmit time do not change between multiplexing or no-multiplexing. The queuing time is almost negligible in case of "ping" because the rate of the ping is very low than the bandwidth of the channel and the ping packet size is small. Hence, the queue is not accumulating any packets so queuing time wont be incurred in the overall latency. The throughput is distributed among the active connections. So the latency when 2-pairs or 3-pairs of hosts are connecting is the same as when just 1-pair is connecting, which is ~161 ms. The throughput will be distributed among connections and if the connections are maintained for long enough, the throughput may be divided evenly among active connections. If the connections are short, the one starting first will have a higher throughput.
+
+2-pairs:
+Latency:
+h1 communicating with h9 (160.4 ms)
+rtt min/avg/max/mdev = 160.247/160.374/161.125/0.508
+
+h7 communicating with h4 (160.4 ms)
+rtt min/avg/max/mdev = 160.203/160.355/160.981/0.379
+
+Throughput:
+Measurement 1:
+h1-h4 (start first)
+server received = 30339 KB, rate = 10.222 Mbps
+client sent = 30339 KB, rate = 11.728 Mbps
+h7-h9
+server received = 25686 KB, rate = 8.618 Mbps
+client sent = 25686 KB, rate = 9.817 Mbps
+
+Measurement 2:
+h1-h4
+server received = 17416 KB, rate = 5.736 Mbps
+client sent = 17416 KB, rate = 6.558 Mbps
+h7-h9 (start first)
+server received = 42752 KB, rate = 13.743 Mbps
+client sent = 42752 KB, rate = 16.290 Mbps
+The total throughput is ~ 19 Mbps in the server side and ~21.5 Mbps in the client side. It is close to our measurement for Q2.
+
+3-pairs:
+Latency:
+h1 communicating with h4 (160.3 ms)
+rtt min/avg/max/mdev = 160.190/160.271/160.359/0.313 ms
+
+h7 communicating with h9 (160.3 ms)
+rtt min/avg/max/mdev = 160.219/160.331/160.972/0.392 ms
+
+h8 communicating with h10 (160.3 ms)
+rtt min/avg/max/mdev = 160.228/160.324/160.831/0.438 ms
+
+Throughput:
+Measurement 1: (duration time 20 second)
+h1-h4 (start first)
+server received = 33762 KB, rate = 10.530 Mbps
+client sent = 33762 KB, rate = 12.321 Mbps
+
+h7-h9
+server received = 16159 KB, rate = 5.089 Mbps
+client sent = 16159 KB, rate = 5.906 Mbps
+
+h8-h10
+server received = 12570 KB, rate = 3.939 Mbps
+client sent = 12570 KB, rate = 4.079 Mbps
+
+Measurement 2: (duration time 120 second)
+h1-h4
+server received = 83631 KB, rate = 5.315 Mbps
+client sent = 83631 KB, rate = 5.530 Mbps
+
+h7-h9 (start first)
+server received = 147437 KB, rate = 9.235 Mbps
+client sent = 147437 KB, rate = 9.691 Mbps
+
+h8-h10
+server received = 66256 KB, rate = 4.187 Mbps
+client sent = 66256 KB, rate = 4.335 Mbps
+
+The total throughput is ~ 19 Mbps in the server side and ~20 Mbps in the client side. It is close to our measurement for Q2.
+
+PS: There can be some delays in starting servers and clients for the experiment but the results seem to prove that we have done a pretty good job to minimize them (experiment errors). 
+
+
+Question 4:
+When h1-h4 and h5-h6 are communicating simultaneously, the latency is not affected by multiplexing. The reason for this is similar as Q3, because latency = propagate + transmit + queue latency. The queuing time is almost negligible in case of "ping" because the rate of the ping is very low than the bandwidth of the channel and the ping packet size is small. Hence, the queue is not accumulating any packets so queuing time wont be incurred in the overall latency. As a result, the predicted latency for h1-h4 is latency_L1 + latency_L2 + latency_L3, which is ~161ms. The predicted latency for h5-h6 communication is latency_L4 + latency_L2 + latency_L5, which is ~ 41 ms.
+The throughput is different compare to Q3. The shared link is L2 this time, since the throughput for the involved links are:
+in h1-h4 communication: L1: 19 Mbps (Client)/20 Mbps (Server); L2: 36 Mbps(C)/40 Mbps (S); L3 28 Mbps(C)/31 Mbps(S).
+in h5-h6 communication: L4: 24 Mbps(C)/26 Mbps (S); L2: 36 Mbps(C)/40 Mbps (S); L5: 24 Mbps(C)/26 Mbps (S).
+The two communications will share throughput in L2, and the share may vary according to which communication starts first. Since in the communication paths, besides L2, L1 and L4/L5 are the paths with smaller throughput capacity in h1-h4 and h5-h6 communications respectively, the throughput in each communication will capped at these numbers, that is to say, h1-h4 communication will capped at 19 Mbps (Client)/20 Mbps (Server), and h5-h6 communications will capped at 24 Mbps(C)/26 Mbps (S); and the total amount of throughput of these two communication will add up close to the capacity of L2, which is ~36 Mbps(C)/40 Mbps (S).
+
+The measured latency is (We tried multiple times with the output included in this folder, and we chose the one with least fluctuation as the final answer):
+h1-h4
+rtt min/avg/max/mdev = 160.194/160.338/160.945/0.469 ms
+h5-h6
+rtt min/avg/max/mdev = 40.168/40.262/40.547/0.242 ms
+
+The measured throughput:
+Measurement 1 (transmit time = 20 s)
+h1-h4
+server received = 43033 KB, rate = 14.381 Mbps
+client sent = 43033 KB, rate = 16.710 Mbps
+h5-h6:
+server received = 61436 KB, rate = 21.289 Mbps
+client sent = 61436 KB, rate = 23.833 Mbps
+
+Measurement 2 (transmit time = 120 s)
+h1-h4
+server received = 243798 KB, rate = 15.838 Mbps
+client sent = 243798 KB, rate = 16.002 Mbps
+
+h5-h6 (start first)
+server received = 320782 KB, rate = 20.787 Mbps
+client sent = 320782 KB, rate = 20.965 Mbps
+
+The measured values are consistent with our predictions. The total throughput is ~36 Mpbs in the server and ~40 Mpbs in the client side. For the h1-h4 communication, it is < 19 Mpbs in the sever side and < 20 Mpbs in the client side. For the h5-h6 communication, it is < 24 Mpbs in the sever side and < 26 Mpbs in the client side.
+

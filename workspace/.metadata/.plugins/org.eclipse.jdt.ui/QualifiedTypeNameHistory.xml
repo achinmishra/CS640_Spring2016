@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.sun.corba.se.impl.encoding.OSFCodeSetRegistry.Entry"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="edu.wisc.cs.sdn.vnet.Iface"/>
+<fullyQualifiedTypeName name="net.floodlightcontroller.packet.UDP"/>
+<fullyQualifiedTypeName name="net.floodlightcontroller.packet.Ethernet"/>
+<fullyQualifiedTypeName name="net.floodlightcontroller.packet.IPv4"/>
+<fullyQualifiedTypeName name="edu.wisc.cs.sdn.vnet.rt.RouteEntry"/>
+<fullyQualifiedTypeName name="net.floodlightcontroller.packet.RIPv2Entry"/>
+<fullyQualifiedTypeName name="net.floodlightcontroller.packet.RIPv2"/>
+<fullyQualifiedTypeName name="net.floodlightcontroller.packetstreamer.thrift.packetstreamerConstants"/>
+<fullyQualifiedTypeName name="org.openflow.protocol.OFMatch"/>
+<fullyQualifiedTypeName name="org.openflow.protocol.action.OFAction"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.openflow.protocol.action.OFActionSetField"/>
+<fullyQualifiedTypeName name="org.openflow.protocol.OFOXMField"/>
+<fullyQualifiedTypeName name="org.openflow.protocol.OFOXMFieldType"/>
+<fullyQualifiedTypeName name="org.openflow.protocol.instruction.OFInstructionGotoTable"/>
+</qualifiedTypeNameHistroy>

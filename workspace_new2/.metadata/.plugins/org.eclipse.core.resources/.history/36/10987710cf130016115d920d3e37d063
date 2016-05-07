@@ -1,0 +1,27 @@
+package csvparse;
+
+import java.io.*;
+import java.util.*;
+
+public class csvread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		List<CSV> csvInput = new LinkedList<CSV>(); 
+		
+		CSV readin = new CSV(); 
+		
+		File infile = new File(args[0]); 
+		
+		try {
+			Scanner scannedIn = new Scanner(infile);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+
+}

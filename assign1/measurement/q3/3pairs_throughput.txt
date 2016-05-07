@@ -1,0 +1,30 @@
+h1 s -- h4 c; h7 s -- h9 c; h8 s -- h10 c
+
+h1-h4 (start first)
+server received = 33762 KB, rate = 10.530 Mbps
+client sent = 33762 KB, rate = 12.321 Mbps
+
+h7-h9
+server received = 16159 KB, rate = 5.089 Mbps
+client sent = 16159 KB, rate = 5.906 Mbps
+
+h8-h10
+server received = 12570 KB, rate = 3.939 Mbps
+client sent = 12570 KB, rate = 4.079 Mbps
+
+t for 120 s
+h1-h4 
+server received = 83631 KB, rate = 5.315 Mbps
+client sent = 83631 KB, rate = 5.530 Mbps
+
+h7-h9 (start first)
+server received = 147437 KB, rate = 9.235 Mbps
+client sent = 147437 KB, rate = 9.691 Mbps
+
+h8-h10
+server received = 66256 KB, rate = 4.187 Mbps
+client sent = 66256 KB, rate = 4..335 Mbps
+
+
+
+

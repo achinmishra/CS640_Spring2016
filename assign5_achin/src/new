@@ -1,0 +1,91 @@
+Method: main Line number: 269
+Method: parseRequest Line number: 104
+Dns type: 1
+a.root-servers.net
+Method: parseRequest Line number: 130
+QUERY RES: ID: 0xffa8, Response, Opcode: Standard query, Return Code: No error, Authoritative: false, Truncated: false, Recursion desired: true, Recursion avail: false
+Questions: 1
+	Name: wisc.edu, Type: A, Class: IN
+Answers: 0
+Authority: 6
+	Name: edu, Type: NS, Class: IN, TTL: 172800, Data: a.edu-servers.net
+	Name: edu, Type: NS, Class: IN, TTL: 172800, Data: c.edu-servers.net
+	Name: edu, Type: NS, Class: IN, TTL: 172800, Data: d.edu-servers.net
+	Name: edu, Type: NS, Class: IN, TTL: 172800, Data: f.edu-servers.net
+	Name: edu, Type: NS, Class: IN, TTL: 172800, Data: g.edu-servers.net
+	Name: edu, Type: NS, Class: IN, TTL: 172800, Data: l.edu-servers.net
+Additional: 8
+	Name: a.edu-servers.net, Type: A, Class: IN, TTL: 172800, Data: 192.5.6.30
+	Name: c.edu-servers.net, Type: A, Class: IN, TTL: 172800, Data: 192.26.92.30
+	Name: d.edu-servers.net, Type: A, Class: IN, TTL: 172800, Data: 192.31.80.30
+	Name: f.edu-servers.net, Type: A, Class: IN, TTL: 172800, Data: 192.35.51.30
+	Name: g.edu-servers.net, Type: A, Class: IN, TTL: 172800, Data: 192.42.93.30
+	Name: l.edu-servers.net, Type: A, Class: IN, TTL: 172800, Data: 192.41.162.30
+	Name: g.edu-servers.net, Type: AAAA, Class: IN, TTL: 172800, Data: 2001:503:cc2c:0:0:0:2:36
+	Name: , Type: Unknown (41), Class: Unknown (1472), TTL: 0, Data: 
+
+Method: parseRequest Line number: 151
+Method: parseRequest Line number: 219
+Method: parseRequest Line number: 237
+Method: parseRequest Line number: 104
+Dns type: 1
+192.41.162.30
+Method: parseRequest Line number: 130
+QUERY RES: ID: 0xffa8, Response, Opcode: Standard query, Return Code: No error, Authoritative: false, Truncated: false, Recursion desired: true, Recursion avail: false
+Questions: 1
+	Name: wisc.edu, Type: A, Class: IN
+Answers: 0
+Authority: 4
+	Name: wisc.edu, Type: NS, Class: IN, TTL: 172800, Data: dns2.itd.umich.edu
+	Name: wisc.edu, Type: NS, Class: IN, TTL: 172800, Data: adns3.doit.wisc.edu
+	Name: wisc.edu, Type: NS, Class: IN, TTL: 172800, Data: adns1.doit.wisc.edu
+	Name: wisc.edu, Type: NS, Class: IN, TTL: 172800, Data: adns2.doit.wisc.edu
+Additional: 9
+	Name: dns2.itd.umich.edu, Type: A, Class: IN, TTL: 172800, Data: 192.12.80.222
+	Name: adns3.doit.wisc.edu, Type: A, Class: IN, TTL: 172800, Data: 144.92.104.21
+	Name: adns3.doit.wisc.edu, Type: AAAA, Class: IN, TTL: 172800, Data: 2607:f388:0:0:0:0:a53:3
+	Name: adns1.doit.wisc.edu, Type: A, Class: IN, TTL: 172800, Data: 128.104.30.60
+	Name: adns1.doit.wisc.edu, Type: A, Class: IN, TTL: 172800, Data: 144.92.9.21
+	Name: adns1.doit.wisc.edu, Type: AAAA, Class: IN, TTL: 172800, Data: 2607:f388:0:0:0:0:a53:1
+	Name: adns2.doit.wisc.edu, Type: A, Class: IN, TTL: 172800, Data: 144.92.20.99
+	Name: adns2.doit.wisc.edu, Type: AAAA, Class: IN, TTL: 172800, Data: 2607:f388:0:0:0:0:a53:2
+	Name: , Type: Unknown (41), Class: Unknown (4096), TTL: 0, Data: 
+
+Method: parseRequest Line number: 151
+Method: parseRequest Line number: 219
+Method: parseRequest Line number: 237
+Method: parseRequest Line number: 104
+Dns type: 1
+144.92.20.99
+Method: parseRequest Line number: 130
+QUERY RES: ID: 0xffa8, Response, Opcode: Standard query, Return Code: No error, Authoritative: true, Truncated: false, Recursion desired: true, Recursion avail: false
+Questions: 1
+	Name: wisc.edu, Type: A, Class: IN
+Answers: 1
+	Name: wisc.edu, Type: A, Class: IN, TTL: 14400, Data: 144.92.9.70
+Authority: 4
+	Name: wisc.edu, Type: NS, Class: IN, TTL: 86400, Data: adns2.doit.wisc.edu
+	Name: wisc.edu, Type: NS, Class: IN, TTL: 86400, Data: dns2.itd.umich.edu
+	Name: wisc.edu, Type: NS, Class: IN, TTL: 86400, Data: adns3.doit.wisc.edu
+	Name: wisc.edu, Type: NS, Class: IN, TTL: 86400, Data: adns1.doit.wisc.edu
+Additional: 7
+	Name: adns1.doit.wisc.edu, Type: A, Class: IN, TTL: 14400, Data: 144.92.9.21
+	Name: adns1.doit.wisc.edu, Type: AAAA, Class: IN, TTL: 14400, Data: 2607:f388:0:0:0:0:a53:1
+	Name: adns2.doit.wisc.edu, Type: A, Class: IN, TTL: 14400, Data: 144.92.20.99
+	Name: adns2.doit.wisc.edu, Type: AAAA, Class: IN, TTL: 14400, Data: 2607:f388:0:0:0:0:a53:2
+	Name: adns3.doit.wisc.edu, Type: A, Class: IN, TTL: 14400, Data: 144.92.104.21
+	Name: adns3.doit.wisc.edu, Type: AAAA, Class: IN, TTL: 14400, Data: 2607:f388:0:0:0:0:a53:3
+	Name: , Type: Unknown (41), Class: Unknown (4096), TTL: 0, Data: 
+
+Method: parseRequest Line number: 151
+Method: parseRequest Line number: 165
+Method: parseRequest Line number: 185
+Method: parseRequest Line number: 205
+java.lang.NullPointerException: null buffer || null address
+	at java.net.PlainDatagramSocketImpl.send(Native Method)
+	at java.net.DatagramSocket.send(DatagramSocket.java:698)
+	at edu.wisc.cs.sdn.simpledns.SimpleDNS.parseRequest(SimpleDNS.java:206)
+	at edu.wisc.cs.sdn.simpledns.SimpleDNS.parseRequest(SimpleDNS.java:238)
+	at edu.wisc.cs.sdn.simpledns.SimpleDNS.parseRequest(SimpleDNS.java:238)
+	at edu.wisc.cs.sdn.simpledns.SimpleDNS.main(SimpleDNS.java:276)
+

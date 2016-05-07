@@ -1,0 +1,28 @@
+package csvparse;
+
+public class CSV {
+	//field
+	String IP; 
+	int mask; 
+	String location; 
+	
+	//constructor
+	csv(){
+		
+	}
+	
+	//method
+	String getIP(){
+		return this.IP; 
+		
+	}
+	
+	int getMask(){
+		return this.mask; 
+	}
+	
+	String getLocation(){
+		return this.location; 
+	}
+
+}
